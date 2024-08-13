@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading Performance</title>
+    <link href="css/lazy-styles.min.css" rel="stylesheet"> <!-- Link to minified styles -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="display-4">Lazy Loading Performance</h1>
+        <p>This page implements lazy loading, where images and other non-essential resources are loaded only when they are needed.</p>
+        
+        <div class="media-container">
+            <!-- Images loaded lazily -->
+            <img src="placeholder.jpg" data-src="images/large-image1.jpg" alt="Lazy Loaded Image 1" class="img-fluid lazy">
+            <img src="placeholder.jpg" data-src="images/large-image2.jpg" alt="Lazy Loaded Image 2" class="img-fluid lazy">
+            <img src="placeholder.jpg" data-src="images/large-image3.jpg" alt="Lazy Loaded Image 3" class="img-fluid lazy">
+            
+            <!-- Videos loaded lazily -->
+            <video class="lazy" controls width="600" height="400" data-src="videos/large-video1.mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video class="lazy" controls width="600" height="400" data-src="videos/large-video2.mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <div id="metrics" class="mt-4">
+            <p>Load Time: <span id="load-time"></span> ms</p> <!-- Placeholder for load time -->
+            <p>Page Size: <span id="page-size"></span> KB</p> <!-- Placeholder for page size -->
+        </div>
+        <!-- JavaScript to simulate loading performance metrics and handle lazy loading -->
+        <script src="js/lazy-script.js"></script>
+    </div>
+</body>
+</html>
