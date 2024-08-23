@@ -2,7 +2,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function loadResource(lazyElement) {
         if (lazyElement.tagName === 'IMG' || lazyElement.tagName === 'VIDEO') {
             lazyElement.src = lazyElement.dataset.src;
-            lazyElement.classList.add('loaded');
+            lazyElement.onload = () => {
+                lazyElement.classList.add('loaded');
+            };
+            lazyElement.onerror = () => {
+                lazyElement.classList.add('error');
+            };
         }
         lazyElement.classList.remove('lazy');
     }
@@ -15,10 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, {
-        rootMargin: '0px 0px 50px 0px', // Trigger loading slightly before the element comes into view
-        threshold: 0.1 // Load when 10% of the element is visible
+        rootMargin: '0px 0px 50px 0px',
+        threshold: 0.1
     });
 
-    const lazyElements = document.querySelectorAll('.lazy');
-    lazyElements.forEach(element => observer.observe(element));
+    document.querySelectorAll('.lazy').forEach(element => observer.observe(element));
 });

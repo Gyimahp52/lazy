@@ -1,16 +1,23 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4; /* Subtle background color for better readability */
 }
 
+/* Container for overall layout */
 .container {
-    padding-top: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Metrics Section */
 #metrics {
     margin-top: 1rem;
+    text-align: center;
 }
 
 /* Flexbox container to arrange images and videos side by side */
@@ -27,4 +34,29 @@ body {
     width: 48%;
     height: auto;
     max-width: 600px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in transition */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Apply this class when the lazy-loaded content is fully loaded */
+.media-container img.loaded,
+.media-container video.loaded {
+    opacity: 1; /* Fade-in effect when loaded */
+}
+
+/* Placeholder styling */
+.media-container img {
+    background-color: #e0e0e0; /* Gray background to mimic image loading */
+}
+
+/* Handle layout shift when an image or video fails to load */
+.media-container img.error,
+.media-container video.error {
+    background-color: #f8d7da; /* Light red background for error state */
+    border: 2px solid #f5c6cb;
+    content: "Failed to load"; /* Placeholder text for failed loading */
+    text-align: center;
+    padding: 20px;
+    display: block;
 }

@@ -17,7 +17,11 @@
         
         <div class="media-container">
             <!-- Images loaded lazily -->
-            <img src="images/placeholder.jpg" data-src="images/1.jpg" alt="Lazy Loaded Image 1" class="img-fluid lazy">
+
+             <!-- Load the first image immediately (above-the-fold content) -->
+             <img src="images/1.jpg" alt="Critical Image 1" class="img-fluid">
+
+            
             <img src="images/placeholder.jpg" data-src="images/2.jpg" alt="Lazy Loaded Image 2" class="img-fluid lazy">
             <img src="images/placeholder.jpg" data-src="images/3.jpg" alt="Lazy Loaded Image 3" class="img-fluid lazy">
             <img src="images/placeholder.jpg" data-src="images/4.jpg" alt="Lazy Loaded Image 4" class="img-fluid lazy">
