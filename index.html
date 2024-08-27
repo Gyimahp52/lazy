@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimized Lazy Loading Performance</title>
+    
+    <!-- Preload critical CSS to avoid render-blocking -->
+    <link rel="preload" href="css/lazy-styles.min.css" as="style">
     <!-- Link to minified and non-blocking styles -->
     <link href="css/lazy-styles.min.css" rel="stylesheet" media="all">
+
+      <!-- Preload critical assets -->
+      <link rel="preload" href="images/1.jpg" as="image">
+     
 </head>
 <body>
     <div class="container mt-5">
@@ -15,8 +22,7 @@
         <div class="media-container">
             <!-- Above-the-Fold Content: Load Immediately -->
             <img src="images/1.jpg" alt="Critical Image 1" class="img-fluid">
-            <video controls width="600" height="400" src="videos/1.mp4">Your browser does not support the video tag.</video>
-
+            <video controls width="600" height="400" src="videos/1.mp4" preload="metadata">Your browser does not support the video tag.</video>
             <!-- Below-the-Fold Content: Lazy Loaded -->
             <img src="images/placeholder.jpg" data-src="images/2.jpg" alt="Lazy Loaded Image 2" class="img-fluid lazy">
             <img src="images/placeholder.jpg" data-src="images/3.jpg" alt="Lazy Loaded Image 3" class="img-fluid lazy">

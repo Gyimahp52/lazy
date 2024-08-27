@@ -1,1 +1,62 @@
-body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:0}.container{padding-top:20px}#metrics{margin-top:1rem}.media-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}.media-container img,.media-container video{width:48%;height:auto;max-width:600px;border-radius:8px;transition:opacity .3s ease-in-out;opacity:0}.media-container img.loaded,.media-container video.loaded{opacity:1}.media-container img{background-color:#e0e0e0}.media-container img.error,.media-container video.error{background-color:#f8d7da;border:2px solid #f5c6cb;content:"Failed to load";text-align:center;padding:20px;display:block}
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container for overall layout */
+.container {
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Metrics Section */
+#metrics {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Flexbox container to arrange images and videos side by side */
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Style for individual media items */
+.media-container img,
+.media-container video {
+    width: 48%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 8px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Apply this class when the lazy-loaded content is fully loaded */
+.media-container img.loaded,
+.media-container video.loaded {
+    opacity: 1;
+}
+
+/* Placeholder styling */
+.media-container img {
+    background-color: #e0e0e0; /* Gray background to mimic image loading */
+}
+
+/* Handle layout shift when an image or video fails to load */
+.media-container img.error,
+.media-container video.error {
+    background-color: #f8d7da;
+    border: 2px solid #f5c6cb;
+    content: "Failed to load";
+    text-align: center;
+    padding: 20px;
+    display: block;
+}
